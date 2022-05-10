@@ -19,7 +19,6 @@ I am greysvarlesp.
 
 # I am working with
 
-![](./vng.png)
 
 
 # Contact me!
