@@ -1,0 +1,22 @@
+baseURL = 'https://greysvarlesp.github.io'
+languageCode = 'en-us'
+title = ""
+theme = "xmin"
+
+[menu]
+[[menu.main]]
+  identifier = 'home'
+  name = 'home'
+  pre = "<i class='fa fa-heart'></i>"
+  url = '/'
+  weight = -110
+
+[[menu.main]]
+  identifier = 'blog'
+  name = 'blog'
+  pre = "<i class='fa fa-heart'></i>"
+  url = '/blog'
+  weight = -105
+
+[markup.goldmark.renderer]
+unsafe= true
