@@ -5,7 +5,7 @@
 {{ end }}
 
 {{ .Content }}
-<!-- 
+
 <ul>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
@@ -15,6 +15,6 @@
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
   </li>
   {{ end }}
-</ul> -->
+</ul>
 
 {{ partial "footer.html" . }}

@@ -1,7 +1,9 @@
 baseURL = 'https://greysvarlesp.github.io/homepage'
 languageCode = 'en-us'
-title = ""
+title = "No plan!"
 theme = "xmin"
+favicon    = "favicon.ico"
+
 
 [menu]
 [[menu.main]]

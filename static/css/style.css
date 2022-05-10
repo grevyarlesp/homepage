@@ -3,7 +3,7 @@ body {
   margin: auto;
   padding: 1em;
   line-height: 1.5;
-  background-image: url('./images/bg.jpg');
+  background-color: #1a1b26;
 }
 
 /* header and footer areas */
