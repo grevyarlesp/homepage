@@ -15,7 +15,8 @@ body {
 .article-meta, .menu a {
   text-decoration: none;
   /* background: #eee; */
-  background: cyan;
+  background: black;
+  opacity: 0.7;
   padding: 5px;
   border-radius: 5px;
 }
