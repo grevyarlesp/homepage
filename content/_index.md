@@ -19,6 +19,8 @@ I am greysvarlesp.
 
 # I am working with
 
+<img src=./vng.png width=20% height=auto>
+</div>
 
 # Contact me!
 
