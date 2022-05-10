@@ -1,7 +1,8 @@
-baseURL = 'https://greysvarlesp.github.io/homepage'
+baseURL = 'https://greysvarlesp.github.io/homepage/'
 languageCode = 'en-us'
-title = "No plan!"
+title = "!!"
 theme = "xmin"
+canonifyurls = true 
 favicon    = "favicon.ico"
 
 
