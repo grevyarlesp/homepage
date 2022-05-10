@@ -2,7 +2,7 @@ baseURL = 'https://greysvarlesp.github.io/homepage'
 languageCode = 'en-us'
 title = "!!"
 theme = "xmin"
-canonifyurls = true 
+# canonifyurls = true 
 favicon    = "favicon.ico"
 
 
