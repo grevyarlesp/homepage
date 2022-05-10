@@ -10,6 +10,8 @@ title: "Homepage"
 
 # Welcome to my homepage!
 
+Hi there!
+
 This is still under construction. I should add something more soon.
 
 # Who am I?
