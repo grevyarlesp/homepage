@@ -1,4 +1,4 @@
-baseURL = 'https://greysvarlesp.github.io/homepage/'
+baseURL = 'https://greysvarlesp.github.io/homepage'
 languageCode = 'en-us'
 title = "!!"
 theme = "xmin"
