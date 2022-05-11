@@ -55,7 +55,7 @@ p {
 }
 
 .menu, .article-meta, footer { 
-  text-align: left; 
+  text-align: center; 
 }
 
 
@@ -63,8 +63,10 @@ p {
 footer a { text-decoration: none; }
 
 hr {
+  /* border-bottom: none; */
+
   border-style: solid;
-  color: #ddd;
+  color: cyan;
 }
 
 /* code */
@@ -90,7 +92,7 @@ img, iframe, video { max-width: 100%;
 main { hyphens: auto; }
 
 blockquote {
-  background: #f9f9f9;
+  background: darkblue;
   border-left: 5px solid #ccc;
   padding: 3px 1em 3px;
 }
@@ -132,7 +134,7 @@ h2 {
 a:link {
   color: gold;
   background-color: rgba(0,0,0,0);
-  font-size: 28px;
+  font-size: 22px;
 }
 
 /* visited link */
@@ -143,6 +145,8 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: blue;
+  background: lightyellow;
+  margin: 1px;
 }
 
 /* selected link */
@@ -152,14 +156,11 @@ a:active {
 
 .title {
   color: gold;
-  font-weight: bold;
-  border-bottom: 2px solid gold;
 }
 
 .date {
   color: lightblue;
-  font-size: 28px;
-
+  font-size: 22px;
   border-bottom: none;
 }
 
