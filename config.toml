@@ -1,6 +1,6 @@
 baseURL = 'https://grevyarlesp.github.io/homepage/'
 languageCode = 'en-us'
-title = "!!"
+title = "DDD"
 theme = "xmin"
 canonifyurls = true 
 favicon    = "favicon.ico"
