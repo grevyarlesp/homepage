@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = "DDD"
 theme = "xmin"
 canonifyurls = true 
+
+[params]
 favicon    = "favicon.ico"
 
 [menu]
