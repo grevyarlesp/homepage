@@ -49,8 +49,8 @@ body {
 
 p {
   color: cyan;
-  font-size: 28px;
-  background-color: black;
+  font-size: 22px;
+   /* background-color: black; */
   opacity: 0.8;
 }
 
@@ -71,12 +71,14 @@ hr {
 pre {
   border: 1px solid #ddd;
   /* border: 1px solid #fff; */
-  box-shadow: 5px 5px 5px #eee;
+  box-shadow: 5px 5px 5px cyan;
   padding: 1em;
   overflow-x: auto;
 }
 
-code { background: #f9f9f9; }
+code { background: #f9f9f9; 
+  color: lightgreen;
+}
 pre code { background: none; }
 
 /* misc elements */
@@ -125,14 +127,8 @@ h2 {
   line-height: 1.2em; 
   color: cyan;
   font-size: 32px;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid cyan;
 }
-
-.date {
-  color: cyan;
-  font-size: 28px;
-}
-
 a:link {
   color: gold;
   background-color: rgba(0,0,0,0);
@@ -146,10 +142,24 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: cyan;
+  color: blue;
 }
 
 /* selected link */
 a:active {
   color: blue;
 }
+
+.title {
+  color: gold;
+  font-weight: bold;
+  border-bottom: 2px solid gold;
+}
+
+.date {
+  color: lightblue;
+  font-size: 28px;
+
+  border-bottom: none;
+}
+
