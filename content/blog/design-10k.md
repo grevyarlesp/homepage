@@ -13,7 +13,7 @@ Since the question is very open-ended with no clear requirements, I am making up
 - Users can register and log in into their accounts
 - Users should be able to write their blogs in Markdown form (provides a markdown editor in client side)
 - Users can follow other users.
-- Users should be able to view blogs submitted by other users, in form of a feed.
+- Users should be able to view blogs submitted by followed users, in form of a feed.
 - Blogs can contain images, but no videos.
 
 ## Estimations:
@@ -33,7 +33,8 @@ We want our system to be:
 - Highly available 
 - Optimized for read
 - Low lantecy (the blogs sent have to be fast)
-- Don't have to be very consistent (when a user posts a blog, we don't need to be immediately distributed to other users feed)
+- Don't have to be consistent (when a user posts a blog, we don't need to be immediately distributed to other users feed). 
+- Have to be tolerance to our network changes and not lose our data.
 
 ## System APIs
 
@@ -41,28 +42,90 @@ We want our system to be:
 - `POST image(user_key, image_data)`: uploads an image, return URL of new image.
 - `GET blog(blog_id)`: returns URL of blog
 - `GET image(image_id)`: returns URL of image
+- `GET follow(user_key)`: returns a list of other users that this user is following.
+
+From this design, each of the feature expectations above can implemented.
+
+This creates a bottleneck, if a user follow too many authors, the client has to do that many API calls to update his feed.
 
 ## High level design
 
-![](./img/design.svg)
+<p align="center">
+<img  src = "../img/design.svg" alt="High level design"/>
+</p>
 
 We can sketch out our high level design: 
 
 - First, the client calls the load balancer. The load balancer divides up the workload between the web servers, it decides which server to handle each request. A level 4 load balancer should be sufficient.
-- The server clusters:
+- The server clusters: Receive and process requests from the users. 
 - File storage stores our files: the markdown files and the image files.
 
-## Deep dive
+From the requirements of such high throughput, it make senses to add in a Content Delivery Network.
 
-Let's take a deep dive into each component of our design.
+## Dive into each components
 
-### Database schemas
+Let's take a dive into each component of our design.
+
+### Load balancing
+
+There are two types of load balancers: Hardware and software. 
+
+- Hardware load balancers are network devices, they usually have many CPU cores, memory and very high throughput. 
+- Software load balancers: installed on small devices, can also be used 
+
+There are several load balancing algorithms: 
+
+- Round robin 
+- Least connection 
+- Least response time 
+
+Round robin is a good choice in this scenario, as the actual bottleneck is not with the web servers.
+
+### Web servers
+
+The web servers are built as a cluster. 
+
+To ensure availability, we can divide add more web services, and use a service such as **Zookeeper**  for discovery and health check.
+
+The load balancer can hit on **Zookeeper** to check which servers are avaiable, then send the requests to the available web servers.
+
+The web servers employ **non-blocking IO** method to handle and process web requests. It involves a queue serve the requests that come first, 
+
+### Database design
+
+Define our tables: 
+
+<p align="center">
+<img  src = "../img/Schema.svg" alt="database"/>
+</p>
+
+With this simple database schema, we can fullfill all the above requirements. 
+
+Users's personal information can be stored as a JSON string, as we don't have to search for those.
+
+Our database can be designed as a cluster, with a 
+
+**Replication** is a method of for availability, also a method for scaling. In our case, we use it ensure the availability, incase any database falls.
+
+### File storage
+
+Content Delivery Network consists of many server globally, these are effectively caches, these are effectively caches.
+
+<p align="center">
+<img  src = "../img/design_with_cdn.svg" alt="cdn"/>
+</p>
+
+When web servers receive the `GET` requests, it tries to **pull** from the CDN first before hitting the actual file storage.
+
+Based on the region, the file storage periodically would **push** most requested data to the CDN.
+
+## Bottlenecks and tradeoffs
 
 
 
-
-
-## References:
+## External resources:
 
 - The template from: https://leetcode.com/discuss/career/229177/My-System-Design-Template
 - https://github.com/donnemartin/system-design-primer
+- This [video](https://youtu.be/bUHFg8CZFws), very informative, explains the operation of each of the components well. 
+- **Designing Data-Intensive Applications** book by Martin Kleppmann, informative on the design of each of the components.
