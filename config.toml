@@ -5,7 +5,7 @@ theme = "xmin"
 canonifyurls = true 
 
 [params]
-favicon    = "favicon.ico"
+favicon = "/favicon.ico"
 
 [menu]
 [[menu.main]]
