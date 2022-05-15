@@ -1,11 +1,10 @@
 ---
-title: "Homepage"
+title: "Something ... Something ... !!!"
 ---
-<div class="center">
-
-<img src=./design.svg width=20% height=auto>
+<p align="center">
+<img src=./design.svg width=40% height=auto>
 <!-- ![](./design.svg) -->
-</div>
+</p>
 
 # Welcome to my homepage!
 
@@ -19,7 +18,13 @@ I am somebody trying to make my way in the universe.
 
 # I am working with
 
+![](./logo-vng.png)
 
+as a software development fresher
 
 # Contact me!
 
+<a href="https://github.com/grevyarlesp/"> <img src="./github-icon-3.ico" width="100" height="100" /></a>
+<a href="https://t.me/lpumAsc"> <img src="./Telegram_logo.png" width="100" height="100" /></a>
+
+or open an issue on this homepage's [repo](https://github.com/grevyarlesp/homepage).
